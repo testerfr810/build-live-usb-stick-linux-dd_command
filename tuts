@@ -1,0 +1,29 @@
+### LIST YOUR DRIVE
+
+sudo fdisk -l
+or
+df -h 
+
+#### FORMAT FAT32
+
+sudo dd if=/dev/zero of=/dev/sdx bs=1M status=progress conv=fdatasync
+
+#### LIVE USB
+
+sudo dd if=YOUR_ISO_FILE.iso of=/dev/sdx status=progress bs=1048576 && sync
+
+
+OR
+
+
+### Format with vFat File System
+
+sudo mkfs.vfat /dev/sdc1 
+
+### Format with NTFS File System
+
+sudo mkfs.ntfs /dev/sdc1 
+
+### Format with EXT4 File System
+
+sudo mkfs.ext4 /dev/sdc1 
